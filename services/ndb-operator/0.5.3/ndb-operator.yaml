@@ -1,0 +1,39 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ndb-operator
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: ndb-operator
+      sourceRef:
+        kind: HelmRepository
+        name: ndb-operator
+        namespace: ${releaseNamespace} 
+      version: 0.5.3
+  interval: 15s
+  install:
+    remediation:
+      retries: 30
+    createNamespace: false
+  upgrade:
+    remediation:
+      retries: 30
+  releaseName: ndb-operator
+  valuesFrom:
+    - kind: ConfigMap
+      name: ndb-operator-0.5.3-defaults
+  targetNamespace: ${releaseNamespace}
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: ndb-operator
+  namespace: ${releaseNamespace}
+spec:
+  interval: 10m
+  timeout: 1m
+  url: "${helmMirrorURL:=https://nutanix.github.io/helm/}"

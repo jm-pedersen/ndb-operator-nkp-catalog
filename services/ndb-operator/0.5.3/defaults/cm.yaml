@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ndb-operator-0.5.3-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |-
+    some: value 
