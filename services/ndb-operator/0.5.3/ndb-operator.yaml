@@ -22,9 +22,9 @@ spec:
     remediation:
       retries: 30
   releaseName: ndb-operator
-  valuesFrom:
-    - kind: ConfigMap
-      name: ndb-operator-0.5.3-defaults
+#  valuesFrom:
+#    - kind: ConfigMap
+#      name: ndb-operator-0.5.3-defaults
   targetNamespace: ${releaseNamespace}
 
 ---
