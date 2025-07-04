@@ -7,7 +7,6 @@ scope:
   - workspace
 allowMultipleInstances: false
 overview: |-
-  # Overview
   The NDB operator automates and simplifies database administration, provisioning, and life-cycle management of NDB on Kubernetes.
 
   NDB operator supports these functionalities:
