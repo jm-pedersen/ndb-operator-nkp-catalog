@@ -4,7 +4,7 @@ category:
   - Custom
 type: catalog
 scope:
-  - workspace
+  - project
 allowMultipleInstances: false
 overview: |-
   The NDB operator automates and simplifies database administration, provisioning, and life-cycle management of NDB on Kubernetes.
